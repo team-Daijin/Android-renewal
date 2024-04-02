@@ -2,11 +2,20 @@ package site.algosipeosseong.knowledgender
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
 
 @Composable
 fun KnowledgenderNavHost(
-    onShowSnackbar: suspend (String, String?) -> Boolean,
     modifier: Modifier = Modifier,
-    startDestination: String = "",
+    startDestination: String = HOME,
 ) {
+    val navHostController = rememberNavController()
+    NavHost(
+        navController = navHostController,
+        startDestination = startDestination,
+        modifier = modifier
+    ) {
+
+    }
 }

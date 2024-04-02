@@ -24,15 +24,15 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
 
             dependencies {
                 add("implementation", project(":core:domain"))
-                add("implementation", project(":core:common"))
+                add("implementation", project(":core:designsystem"))
 
                 add("testImplementation", kotlin("test"))
                 add("testImplementation", project(":core:testing"))
                 add("androidTestImplementation", kotlin("test"))
                 add("androidTestImplementation", project(":core:testing"))
 
-                add("implementation", libs.findLibrary("coil.kt").get())
-                add("implementation", libs.findLibrary("coil.kt.compose").get())
+                add("implementation", libs.findLibrary("androidx.compose.material3").get())
+                add("implementation", libs.findLibrary("androidx.compose.ui.tooling.preview").get())
 
                 add("implementation", libs.findLibrary("androidx.hilt.navigation.compose").get())
                 add("implementation", libs.findLibrary("androidx.lifecycle.runtimeCompose").get())
