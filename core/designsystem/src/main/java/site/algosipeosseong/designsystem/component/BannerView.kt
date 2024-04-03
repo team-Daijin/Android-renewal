@@ -14,6 +14,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberAsyncImagePainter
+import coil.request.ImageRequest
+import coil.size.Size
+import site.algosipeosseong.designsystem.theme.LightDefault
 import java.nio.file.Files.size
 
 @Composable
@@ -28,10 +32,10 @@ fun BannerView(item: List<BannerResponse>) {
     ) {
         HorizontalPager(
            // modifier = Modifier.fillMaxHeight(),
-            count = item.size,
+            pageCount = item.size,
             state = pagerState,
             userScrollEnabled = true,
-            content = {page ->
+            pageContent = {page ->
                 Image(
                     painter = rememberAsyncImagePainter(
                         ImageRequest.Builder(LocalContext.current).data(data = item[page].fileUrl)
@@ -50,7 +54,7 @@ fun BannerView(item: List<BannerResponse>) {
             pagerState = pagerState,
             pageCount = item.size,
             activeColor = Color.White,
-            inactiveColor = LightSky,
+            inactiveColor = LightDefault,
             spacing = 10.dp,
             indicatorWidth = 5.dp,
             indicatorHeight = 5.dp,

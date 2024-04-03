@@ -1,9 +1,9 @@
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
 import com.android.build.gradle.LibraryExtension
-import dgsw.proj.convention.configureGradleManagedDevices
-import dgsw.proj.convention.configureKotlinAndroid
-import dgsw.proj.convention.configurePrintApksTask
-import dgsw.proj.convention.disableUnnecessaryAndroidTests
+import site.algosipeosseong.convention.configureGradleManagedDevices
+import site.algosipeosseong.convention.configureKotlinAndroid
+import site.algosipeosseong.convention.configurePrintApksTask
+import site.algosipeosseong.convention.disableUnnecessaryAndroidTests
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure

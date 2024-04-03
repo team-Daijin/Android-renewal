@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "dgsw.proj.home"
+    namespace = "site.algosipeosseong.home"
     defaultConfig {
         consumerProguardFiles("consumer-rules.pro")
     }

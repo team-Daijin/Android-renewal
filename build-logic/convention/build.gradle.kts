@@ -5,7 +5,7 @@ plugins {
     //`kotlin-dsl-precompiled-script-plugins`
 }
 
-group = "dgsw.proj.convention.build-logic"
+group = "site.algosipeosseong.convention.build-logic"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17

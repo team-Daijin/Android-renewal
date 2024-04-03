@@ -1,8 +1,8 @@
 
 
 import com.android.build.gradle.LibraryExtension
-import dgsw.proj.convention.configureGradleManagedDevices
-import dgsw.proj.convention.libs
+import site.algosipeosseong.convention.configureGradleManagedDevices
+import site.algosipeosseong.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
