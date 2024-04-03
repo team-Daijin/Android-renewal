@@ -66,7 +66,7 @@ private fun DialogView(
                 style = TextStyle(
                     fontFamily = pretendard,
                     fontWeight = FontWeight.SemiBold,
-                    fontSize = 24.sp)
+                    fontSize = 24.sp
                 )
             )
             BaseText(

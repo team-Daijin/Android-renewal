@@ -20,45 +20,45 @@ import coil.size.Size
 import site.algosipeosseong.designsystem.theme.LightDefault
 import java.nio.file.Files.size
 
-@Composable
-@ExperimentalFoundationApi
-fun BannerView(item: List<BannerResponse>) {
-    val pagerState = rememberPagerState(initialPage = 0)
-
-    Box(
-        modifier = Modifier
-            .fillMaxWidth(),
-        Alignment.BottomCenter
-    ) {
-        HorizontalPager(
-           // modifier = Modifier.fillMaxHeight(),
-            pageCount = item.size,
-            state = pagerState,
-            userScrollEnabled = true,
-            pageContent = {page ->
-                Image(
-                    painter = rememberAsyncImagePainter(
-                        ImageRequest.Builder(LocalContext.current).data(data = item[page].fileUrl)
-                            .apply(block = fun ImageRequest.Builder.() {
-                                size(Size.ORIGINAL)
-                            }).build()
-                    ),
-                    contentDescription = "Banner",
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    contentScale = ContentScale.Crop
-                )
-            }
-        )
-        HorizontalPagerIndicator(
-            pagerState = pagerState,
-            pageCount = item.size,
-            activeColor = Color.White,
-            inactiveColor = LightDefault,
-            spacing = 10.dp,
-            indicatorWidth = 5.dp,
-            indicatorHeight = 5.dp,
-            modifier = Modifier.padding(15.dp)
-        )
-    }
-}
+//@Composable
+//@ExperimentalFoundationApi
+//fun BannerView(item: List<BannerResponse>) {
+//    val pagerState = rememberPagerState(initialPage = 0)
+//
+//    Box(
+//        modifier = Modifier
+//            .fillMaxWidth(),
+//        Alignment.BottomCenter
+//    ) {
+//        HorizontalPager(
+//           // modifier = Modifier.fillMaxHeight(),
+//            pageCount = item.size,
+//            state = pagerState,
+//            userScrollEnabled = true,
+//            pageContent = {page ->
+//                Image(
+//                    painter = rememberAsyncImagePainter(
+//                        ImageRequest.Builder(LocalContext.current).data(data = item[page].fileUrl)
+//                            .apply(block = fun ImageRequest.Builder.() {
+//                                size(Size.ORIGINAL)
+//                            }).build()
+//                    ),
+//                    contentDescription = "Banner",
+//                    modifier = Modifier
+//                        .fillMaxWidth(),
+//                    contentScale = ContentScale.Crop
+//                )
+//            }
+//        )
+//        HorizontalPagerIndicator(
+//            pagerState = pagerState,
+//            pageCount = item.size,
+//            activeColor = Color.White,
+//            inactiveColor = LightDefault,
+//            spacing = 10.dp,
+//            indicatorWidth = 5.dp,
+//            indicatorHeight = 5.dp,
+//            modifier = Modifier.padding(15.dp)
+//        )
+//    }
+//}

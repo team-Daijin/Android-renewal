@@ -9,8 +9,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Visibility
-import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -34,74 +32,74 @@ import site.algosipeosseong.designsystem.theme.LighterBlack
 import site.algosipeosseong.designsystem.theme.LighterDefault
 import site.algosipeosseong.designsystem.theme.pretendard
 
-@Composable
-fun BaseTextField(
-    modifier: Modifier = Modifier,
-    value: String,
-    placeHolder: String,
-    textFieldError: Boolean = false,
-    onValueChange: (String) -> Unit,
-    isPw: Boolean = false
-) {
-    //textfield's state
-    val interactionSource = remember { MutableInteractionSource() }
-    val isFocused by interactionSource.collectIsFocusedAsState()
-
-
-
-    //password toggle's state
-    var passwordVisible by rememberSaveable { mutableStateOf(false) }
-
-    val image = if (passwordVisible) Icons.Filled.Visibility else Icons.Filled.VisibilityOff
-
-    val description = if (passwordVisible) "Hide password" else "Show password"
-
-    BasicTextField(
-        singleLine = true,
-        value = value,
-        onValueChange = onValueChange,
-        interactionSource = interactionSource,
-        visualTransformation =
-        if (isPw && (!passwordVisible)) PasswordVisualTransformation()
-        else VisualTransformation.None,
-        decorationBox = { innerTextField ->
-            Box(
-                modifier = modifier
-                    .heightIn(44.dp)
-                    .border(
-                        1.dp,
-                        color = if (textFieldError) DarkRed else if (isFocused) BasePurple else LighterDefault,
-                        RoundedCornerShape(8.dp)
-                    ),
-                Alignment.CenterStart,
-
-                ) {
-                Box(modifier = Modifier.padding(start = 16.dp)) {
-                    if (value.isEmpty()) {
-                        Text(
-                            placeHolder,
-                            color = LighterBlack,
-                            style = TextStyle(
-                                fontSize = 16.sp,
-                                fontFamily = pretendard,
-                                fontWeight = FontWeight.Normal
-                            ),
-                            modifier = Modifier
-                        )
-                    }
-                    innerTextField()
-                }
-
-                if (isPw) {
-                    IconButton(
-                        onClick = { passwordVisible = !passwordVisible }, modifier = Modifier
-                            .align(Alignment.CenterEnd)
-                            .padding(end = 12.dp)
-                    ) {
-                        Icon(imageVector = image, description)
-                    }
-                }
-            }
-        }
-    )
-}
+//@Composable
+//fun BaseTextField(
+//    modifier: Modifier = Modifier,
+//    value: String,
+//    placeHolder: String,
+//    textFieldError: Boolean = false,
+//    onValueChange: (String) -> Unit,
+//    isPw: Boolean = false
+//) {
+//    //textfield's state
+//    val interactionSource = remember { MutableInteractionSource() }
+//    val isFocused by interactionSource.collectIsFocusedAsState()
+//
+//
+//
+//    //password toggle's state
+//    var passwordVisible by rememberSaveable { mutableStateOf(false) }
+//
+//    val image = if (passwordVisible) Icons.Filled.Visibility else Icons.Filled.VisibilityOff
+//
+//    val description = if (passwordVisible) "Hide password" else "Show password"
+//
+//    BasicTextField(
+//        singleLine = true,
+//        value = value,
+//        onValueChange = onValueChange,
+//        interactionSource = interactionSource,
+//        visualTransformation =
+//        if (isPw && (!passwordVisible)) PasswordVisualTransformation()
+//        else VisualTransformation.None,
+//        decorationBox = { innerTextField ->
+//            Box(
+//                modifier = modifier
+//                    .heightIn(44.dp)
+//                    .border(
+//                        1.dp,
+//                        color = if (textFieldError) DarkRed else if (isFocused) BasePurple else LighterDefault,
+//                        RoundedCornerShape(8.dp)
+//                    ),
+//                Alignment.CenterStart,
+//
+//                ) {
+//                Box(modifier = Modifier.padding(start = 16.dp)) {
+//                    if (value.isEmpty()) {
+//                        Text(
+//                            placeHolder,
+//                            color = LighterBlack,
+//                            style = TextStyle(
+//                                fontSize = 16.sp,
+//                                fontFamily = pretendard,
+//                                fontWeight = FontWeight.Normal
+//                            ),
+//                            modifier = Modifier
+//                        )
+//                    }
+//                    innerTextField()
+//                }
+//
+//                if (isPw) {
+//                    IconButton(
+//                        onClick = { passwordVisible = !passwordVisible }, modifier = Modifier
+//                            .align(Alignment.CenterEnd)
+//                            .padding(end = 12.dp)
+//                    ) {
+//                        Icon(imageVector = image, description)
+//                    }
+//                }
+//            }
+//        }
+//    )
+//}

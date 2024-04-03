@@ -13,11 +13,11 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dgsw.stac.knowledgender.navigation.Route.CARDNEWS
-import dgsw.stac.knowledgender.util.BODY
-import dgsw.stac.knowledgender.util.CRIME
-import dgsw.stac.knowledgender.util.HEART
-import dgsw.stac.knowledgender.util.RELATIONSHIP
+import site.algosipeosseong.common.BODY
+import site.algosipeosseong.common.CARDNEWS
+import site.algosipeosseong.common.CRIME
+import site.algosipeosseong.common.HEART
+import site.algosipeosseong.common.RELATIONSHIP
 import site.algosipeosseong.designsystem.R
 import site.algosipeosseong.designsystem.theme.BaseBlack
 import site.algosipeosseong.designsystem.theme.pretendard

@@ -25,78 +25,76 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import dgsw.stac.knowledgender.remote.AppointmentResponse
-import dgsw.stac.knowledgender.ui.feature.map.MapViewModel
 import site.algosipeosseong.designsystem.theme.BaseBlack
 import site.algosipeosseong.designsystem.theme.DarkestBlack
 import site.algosipeosseong.designsystem.theme.pretendard
 
-@Composable
-fun MapItemList(viewModel: MapViewModel) {
-    val appointmentItems by viewModel.appointmentView.collectAsState()
-    appointmentItems?.let {
-        if (it.isEmpty()){
-            NoData()
-        } else {
-            LazyColumn(
-                modifier = Modifier.fillMaxWidth().height(200.dp)
-            ) {
-                items(it) { item ->
-                    MapItemView(item)
-                }
-            }
-        }
-    } ?: run {
-        NoData()
-    }
-}
-
-@Composable
-fun MapItemView(item: AppointmentResponse) {
-    Row(
-        modifier = Modifier
-            .wrapContentHeight()
-            .fillMaxWidth()
-            .padding(24.dp),
-        horizontalArrangement = Arrangement.SpaceAround,
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        AsyncImage(
-            model = item.image,
-            contentDescription = null,
-            contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .size(120.dp)
-                .clip(RoundedCornerShape(10.dp))
-        )
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(start = 16.dp),
-        ) {
-            Text(
-                text = item.name,
-                color = DarkestBlack,
-                style = TextStyle(
-                    fontFamily = pretendard, fontWeight = FontWeight.Medium, fontSize = 20.sp
-                )
-            )
-            Spacer(modifier = Modifier.height(2.dp))
-            Text(
-                text = item.address,
-                color = BaseBlack,
-                style = TextStyle(
-                    fontFamily = pretendard, fontWeight = FontWeight.Normal, fontSize = 14.sp
-                )
-            )
-            Spacer(modifier = Modifier.height(2.dp))
-            Text(
-                text = item.contact,
-                color = BaseBlack,
-                style = TextStyle(
-                    fontFamily = pretendard, fontWeight = FontWeight.Normal, fontSize = 14.sp
-                )
-            )
-        }
-    }
-}
+//@Composable
+//fun MapItemList(viewModel: MapViewModel) {
+//    val appointmentItems by viewModel.appointmentView.collectAsState()
+//    appointmentItems?.let {
+//        if (it.isEmpty()){
+//            NoData()
+//        } else {
+//            LazyColumn(
+//                modifier = Modifier.fillMaxWidth().height(200.dp)
+//            ) {
+//                items(it) { item ->
+//                    MapItemView(item)
+//                }
+//            }
+//        }
+//    } ?: run {
+//        NoData()
+//    }
+//}
+//
+//@Composable
+//fun MapItemView(item: AppointmentResponse) {
+//    Row(
+//        modifier = Modifier
+//            .wrapContentHeight()
+//            .fillMaxWidth()
+//            .padding(24.dp),
+//        horizontalArrangement = Arrangement.SpaceAround,
+//        verticalAlignment = Alignment.CenterVertically
+//    ) {
+//        AsyncImage(
+//            model = item.image,
+//            contentDescription = null,
+//            contentScale = ContentScale.Crop,
+//            modifier = Modifier
+//                .size(120.dp)
+//                .clip(RoundedCornerShape(10.dp))
+//        )
+//        Column(
+//            modifier = Modifier
+//                .fillMaxSize()
+//                .padding(start = 16.dp),
+//        ) {
+//            Text(
+//                text = item.name,
+//                color = DarkestBlack,
+//                style = TextStyle(
+//                    fontFamily = pretendard, fontWeight = FontWeight.Medium, fontSize = 20.sp
+//                )
+//            )
+//            Spacer(modifier = Modifier.height(2.dp))
+//            Text(
+//                text = item.address,
+//                color = BaseBlack,
+//                style = TextStyle(
+//                    fontFamily = pretendard, fontWeight = FontWeight.Normal, fontSize = 14.sp
+//                )
+//            )
+//            Spacer(modifier = Modifier.height(2.dp))
+//            Text(
+//                text = item.contact,
+//                color = BaseBlack,
+//                style = TextStyle(
+//                    fontFamily = pretendard, fontWeight = FontWeight.Normal, fontSize = 14.sp
+//                )
+//            )
+//        }
+//    }
+//}

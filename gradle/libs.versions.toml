@@ -24,6 +24,7 @@ androidxDataStore = "1.0.0"
 androidxComposeCompiler = "1.5.2"
 androidxComposeBom = "2023.06.01"
 desugar = "2.0.3"
+room = "2.6.1"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -35,6 +36,11 @@ material = { group = "com.google.android.material", name = "material", version.r
 google-oss-licenses = { group = "com.google.android.gms", name = "play-services-oss-licenses", version.ref = "googleOss" }
 google-oss-licenses-plugin = { group = "com.google.android.gms", name = "oss-licenses-plugin", version.ref = "googleOssPlugin" }
 androidx-dataStore-core = { group = "androidx.datastore", name = "datastore", version.ref = "androidxDataStore" }
+
+#room
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+
 
 #desugar
 andoird-desugar = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugar" }
