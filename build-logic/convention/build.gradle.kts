@@ -2,7 +2,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     `kotlin-dsl`
-    //`kotlin-dsl-precompiled-script-plugins`
 }
 
 group = "site.algosipeosseong.convention.build-logic"
@@ -59,7 +58,5 @@ gradlePlugin {
             id = "convention.android.feature"
             implementationClass = "AndroidFeatureConventionPlugin"
         }
-
-
     }
 }

@@ -1,32 +1,33 @@
 [versions]
 androidxActivity = "1.8.0-alpha06"
-androidGradlePlugin = "8.1.1"
+androidGradlePlugin = "8.3.1"
 bottomSheet = "1.2.0-alpha02"
+composeBom = "2023.03.00"
 googleOss = "17.0.1"
 googleOssPlugin = "0.10.6"
-kotlin = "1.9.0"
-ksp = "1.9.0-1.0.13"
-core-ktx = "1.9.0"
+kotlin = "1.9.23"
+ksp = "1.9.23-1.0.19"
+core-ktx = "1.12.0"
 coil = "2.2.2"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
 appcompat = "1.6.1"
 material = "1.11.0"
-hilt = "2.47"
+hilt = "2.48"
 hiltExt = "1.0.0"
 kotlinxCoroutines = "1.6.4"
 androidxLifecycle = "2.7.0"
 androidxHiltNavigationCompose = "1.0.0"
-org-jetbrains-kotlin-android = "1.8.0"
 androidxNavigation = "2.7.4"
 androidxDataStore = "1.0.0"
-androidxComposeCompiler = "1.5.2"
-androidxComposeBom = "2023.06.01"
+androidxComposeCompiler = "1.5.11"
+androidxComposeBom = "2024.03.00"
 desugar = "2.0.3"
 room = "2.6.1"
 
 [libraries]
+androidx-compose-bom-v20230300 = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
@@ -72,6 +73,7 @@ androidx-compose-ui-test = { group = "androidx.compose.ui", name = "ui-test-juni
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
+androidx-compose-compiler = { group = "androidx.compose.compiler", name = "compiler", version.ref = "androidxComposeCompiler" }
 
 #navigation
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHiltNavigationCompose" }
@@ -99,7 +101,7 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 com-android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
-org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
+org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
 [bundles]

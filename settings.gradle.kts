@@ -17,7 +17,7 @@ dependencyResolutionManagement {
 rootProject.name = "knowledgender"
 include(":app")
 include(":core")
-include("feature")
+include(":feature")
 include(":core:designsystem")
 include(":core:testing")
 include(":feature:home")

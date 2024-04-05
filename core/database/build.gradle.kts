@@ -1,16 +1,14 @@
+
 import com.google.devtools.ksp.gradle.model.Ksp
 
 plugins {
     id("convention.android.library")
+    id("convention.compose.library")
 }
 
 android {
     namespace = "site.algosipeosseong.database"
-    compileSdk = 33
-
     defaultConfig {
-        minSdk = 26
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -23,13 +21,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 }
 
