@@ -4,6 +4,7 @@ plugins {
     id("convention.android.hilt")
 }
 
+
 android {
     namespace = "site.algosipeosseong.knowledgender"
 
@@ -25,13 +26,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
     packaging {
         resources {

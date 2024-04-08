@@ -21,6 +21,7 @@ dependencies {
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.ksp.gradlePlugin)
     compileOnly(libs.android.gradlePlugin)
+    compileOnly(libs.room.gradlePlugin)
 }
 
 
@@ -57,6 +58,10 @@ gradlePlugin {
         register("feature") {
             id = "convention.android.feature"
             implementationClass = "AndroidFeatureConventionPlugin"
+        }
+        register("room") {
+            id = "convention.android.room"
+            implementationClass = "AndroidRoomConventionPlugin"
         }
     }
 }

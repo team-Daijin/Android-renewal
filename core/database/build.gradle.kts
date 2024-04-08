@@ -1,9 +1,6 @@
-
-import com.google.devtools.ksp.gradle.model.Ksp
-
 plugins {
     id("convention.android.library")
-    id("convention.compose.library")
+    id("convention.android.room")
 }
 
 android {
@@ -11,6 +8,7 @@ android {
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
     }
 
     buildTypes {
@@ -27,6 +25,7 @@ android {
 dependencies {
 
     api(libs.androidx.room.runtime)
+    api(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
 
     implementation(libs.core.ktx)

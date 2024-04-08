@@ -11,7 +11,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
  * Configure base Kotlin with Android options
  */
 internal fun Project.configureKotlinAndroid(
-    commonExtension: CommonExtension<*, *, *, *, *, *>,
+    commonExtension: CommonExtension<*, *, *, *, *,*>,
 ) {
     commonExtension.apply {
         compileSdk = 34
@@ -23,12 +23,12 @@ internal fun Project.configureKotlinAndroid(
         compileOptions {
             // Up to Java 11 APIs are available through desugaring
             // https://developer.android.com/studio/write/java11-minimal-support-table
-            sourceCompatibility = JavaVersion.VERSION_17
-            targetCompatibility = JavaVersion.VERSION_17
+            sourceCompatibility = JavaVersion.VERSION_1_8
+            targetCompatibility = JavaVersion.VERSION_1_8
             isCoreLibraryDesugaringEnabled = true
         }
         kotlinOptions {
-            jvmTarget = JavaVersion.VERSION_17.toString()
+            jvmTarget = JavaVersion.VERSION_1_8.toString()
         }
         dependencies {
             add("coreLibraryDesugaring", libs.findLibrary("andoird-desugar").get())
@@ -39,6 +39,6 @@ internal fun Project.configureKotlinAndroid(
 
 
 
-fun CommonExtension<*, *, *, *, *, *>.kotlinOptions(block: KotlinJvmOptions.() -> Unit) {
+fun CommonExtension<*, *, *, *, *,*>.kotlinOptions(block: KotlinJvmOptions.() -> Unit) {
     (this as ExtensionAware).extensions.configure("kotlinOptions", block)
 }
