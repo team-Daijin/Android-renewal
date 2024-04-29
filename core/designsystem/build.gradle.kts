@@ -1,6 +1,6 @@
 plugins {
-    id("convention.android.library")
-    id("convention.compose.library")
+    alias(libs.plugins.knowledgender.android.library)
+    alias(libs.plugins.knowledgender.compose.library)
 }
 
 android {
@@ -23,7 +23,13 @@ android {
 
 dependencies {
     implementation(project(":core:common"))
+    implementation(project(":core:model"))
 
+    debugImplementation(libs.androidx.compose.ui.tooling.preview)
+    api(libs.accompanist.pager)
+    api(libs.coil.kt)
+    api(libs.viewPager.indicator)
+    api(libs.viewPager)
     api(libs.coil.kt.compose)
     api(libs.androidx.activity.compose)
     api(libs.androidx.compose.material3)

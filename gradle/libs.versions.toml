@@ -3,12 +3,10 @@ androidxActivity = "1.8.0-alpha06"
 androidGradlePlugin = "8.3.1"
 bottomSheet = "1.2.0-alpha02"
 composeBom = "2024.03.00"
-googleOss = "17.0.1"
-googleOssPlugin = "0.10.6"
 kotlin = "1.9.22"
 ksp = "1.9.22-1.0.18"
 core-ktx = "1.12.0"
-coil = "2.2.2"
+coil = "2.4.0"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
@@ -24,7 +22,18 @@ androidxDataStore = "1.0.0"
 androidxComposeCompiler = "1.5.10"
 desugar = "2.0.4"
 room = "2.6.1"
+retrofit = "2.9.0"
+kotlinxSerializationJson = "1.6.3"
+retrofitKotlinxSerializationJson = "1.0.0"
+okhttp = "4.12.0"
 uiTooling = "1.6.5"
+gmsAuth = "20.7.0"
+gmsPlugin = "4.4.0"
+viewPager = "1.0.0"
+viewPagerIndicator = "5.0"
+accompanist-pager = "0.20.1"
+
+#implementation "com.google.accompanist:accompanist-pager:0.20.1"
 
 [libraries]
 androidx-compose-bom-v20230300 = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
@@ -34,9 +43,22 @@ androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-google-oss-licenses = { group = "com.google.android.gms", name = "play-services-oss-licenses", version.ref = "googleOss" }
-google-oss-licenses-plugin = { group = "com.google.android.gms", name = "oss-licenses-plugin", version.ref = "googleOssPlugin" }
 androidx-dataStore-core = { group = "androidx.datastore", name = "datastore", version.ref = "androidxDataStore" }
+
+#viewPager
+viewPager = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "viewPager" }
+viewPager-indicator = { group = "com.tbuonomo", name = "dotsindicator", version.ref = "viewPagerIndicator" }
+accompanist-pager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist-pager" }
+
+#google
+google-oauth = {group = "com.google.android.gms",name = "play-services-auth",version.ref = "gmsAuth"}
+#implementation 'com.google.android.gms:play-services-auth:20.7.0'
+
+#rest
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-kotlin-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofitKotlinxSerializationJson" }
 
 #room
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
@@ -105,6 +127,16 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 com-android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+google-gms = { id = "com.google.gms.google-services", version.ref = "gmsPlugin" }
 room = { id = "androidx.room", version.ref = "room" }
+
+knowledgender-android-application = { id = "convention.android.application", version = "unspecified" }
+knowledgender-android-application-compose = { id = "convention.android.application.compose", version = "unspecified" }
+knowledgender-android-feature = { id = "convention.android.feature", version = "unspecified" }
+knowledgender-android-hilt = { id = "convention.android.hilt", version = "unspecified" }
+knowledgender-android-library = { id = "convention.android.library", version = "unspecified" }
+knowledgender-compose-library = { id = "convention.compose.library", version = "unspecified" }
+knowledgender-jvm-library = { id = "convention.jvm.library", version = "unspecified" }
+
 [bundles]
 

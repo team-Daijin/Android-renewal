@@ -1,6 +1,6 @@
 plugins {
-    id("convention.android.library")
-    id("convention.compose.library")
+    alias(libs.plugins.knowledgender.android.library)
+    alias(libs.plugins.knowledgender.compose.library)
 }
 
 android {

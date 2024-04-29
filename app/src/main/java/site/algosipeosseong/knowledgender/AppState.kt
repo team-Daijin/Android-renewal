@@ -1,6 +1,8 @@
 package site.algosipeosseong.knowledgender
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.navigation.NavDestination
@@ -13,23 +15,28 @@ import kotlinx.coroutines.CoroutineScope
 fun rememberAppState(
     coroutineScope: CoroutineScope = rememberCoroutineScope(),
     navController: NavHostController = rememberNavController(),
-): AppState {
+): KnowledgenderAppState {
     return remember(
         navController,
         coroutineScope
     ) {
-        AppState(
+        KnowledgenderAppState(
             navController,
+            ,
             coroutineScope
         )
     }
 }
 
-class AppState(
+@Stable
+class KnowledgenderAppState(
     val navController: NavHostController,
+    val positionChecked: Boolean,
     val coroutineScope: CoroutineScope
 ) {
     val currentDestination: NavDestination?
         @Composable get() = navController
             .currentBackStackEntryAsState().value?.destination
+
+
 }

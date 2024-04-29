@@ -39,10 +39,6 @@ gradlePlugin {
             id = "convention.android.hilt"
             implementationClass = "AndroidHiltConventionPlugin"
         }
-        register("androidFlavors") {
-            id = "convention.android.application.flavors"
-            implementationClass = "AndroidApplicationFlavorsConventionPlugin"
-        }
         register("jvmLibrary") {
             id = "convention.jvm.library"
             implementationClass = "JvmLibraryConventionPlugin"
@@ -58,10 +54,6 @@ gradlePlugin {
         register("feature") {
             id = "convention.android.feature"
             implementationClass = "AndroidFeatureConventionPlugin"
-        }
-        register("room") {
-            id = "convention.android.room"
-            implementationClass = "AndroidRoomConventionPlugin"
         }
     }
 }

@@ -1,6 +1,7 @@
 plugins {
-    id("convention.android.library")
-    id("convention.compose.library")
+    alias(libs.plugins.knowledgender.android.library)
+    alias(libs.plugins.knowledgender.compose.library)
+    alias(libs.plugins.knowledgender.android.hilt)
 }
 
 android {
@@ -22,6 +23,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:model"))
+    implementation(project(":core:network"))
 
     implementation(libs.core.ktx)
     implementation(libs.appcompat)

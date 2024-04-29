@@ -1,0 +1,3 @@
+package site.algosipeosseong.domain
+
+class GetCardnewsUseCase

@@ -1,6 +1,6 @@
 plugins {
-    id("convention.android.library")
-    id("convention.compose.library")
+    alias(libs.plugins.knowledgender.android.library)
+    alias(libs.plugins.knowledgender.compose.library)
 }
 
 android {
@@ -21,7 +21,12 @@ android {
     }
 }
 
+//add("implementation", libs.findLibrary("androidx.compose.material3").get())
+//add("implementation", libs.findLibrary("androidx.compose.ui.tooling.preview").get())
+//add("debugImplementation", libs.findLibrary("androidx.compose.ui.tooling").get())
 dependencies {
+    debugImplementation(libs.androidx.compose.ui.tooling)
+
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)

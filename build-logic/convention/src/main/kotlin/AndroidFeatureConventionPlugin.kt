@@ -22,10 +22,12 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 configureGradleManagedDevices(this)
             }
 
+
             dependencies {
                 add("implementation", project(":core:common"))
                 add("implementation", project(":core:domain"))
                 add("implementation", project(":core:designsystem"))
+                add("implementation", project(":core:model"))
 
                 add("testImplementation", kotlin("test"))
                 add("testImplementation", project(":core:testing"))
@@ -45,3 +47,4 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
         }
     }
 }
+
