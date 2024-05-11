@@ -40,9 +40,9 @@ dependencies {
 
     implementation(project(":core:designsystem"))
     implementation(project(":core:common"))
-    implementation(project(":core:domain"))
 
     implementation(project(":feature:home"))
+
 
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
     implementation("androidx.compose.ui:ui")

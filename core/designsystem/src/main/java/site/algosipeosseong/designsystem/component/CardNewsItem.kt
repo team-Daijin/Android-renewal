@@ -16,6 +16,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
@@ -25,6 +26,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
@@ -47,7 +49,6 @@ fun CardNewsItemView(
     Column(
         modifier = modifier
             .width(165.dp)
-            .padding(horizontal = 8.dp)
         //.clickable { onNavigationRequested(CARDNEWSDETAIL + "/" + item.) }
     ) {
         Box(modifier = Modifier.clip(RoundedCornerShape(topStart = 10.dp))) {
@@ -61,12 +62,15 @@ fun CardNewsItemView(
             )
             Box(
                 modifier = Modifier
+                    .padding(start = 8.dp, bottom = 4.dp)
                     .size(width = 30.dp, height = 14.dp)
                     .background(
-                        Color.White
+                        Color.LightGray.copy(alpha = 0.2f)
                     )
-                    .alpha(alpha = 0.2f)
-                    .border(width = 0.6.dp, color = BasePurple)
+                    .align(Alignment.BottomStart)
+
+                    .border(width = 0.6.dp, color = BasePurple),
+                contentAlignment = Alignment.Center
             ) {
                 BaseText(
                     text = category, color = DarkPurple, style = TextStyle(

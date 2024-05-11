@@ -1,6 +1,7 @@
 package site.algosipeosseong.network
 
-import site.algosipeosseong.model.Banners
+import kotlinx.coroutines.flow.Flow
+import site.algosipeosseong.model.Banner
 import site.algosipeosseong.model.Cardnews
 import site.algosipeosseong.model.CardnewsDetail
 import site.algosipeosseong.model.Category
@@ -9,13 +10,14 @@ import site.algosipeosseong.model.ClinicRequest
 
 
 interface KnowledgenderNetworkDataSource {
-    suspend fun getCardnews(): List<Cardnews>
+    suspend fun getCardnews(): Flow<List<Cardnews>>
 
-    suspend fun getCardnewsDetail(cardId: Long): CardnewsDetail
+    suspend fun getCardnewsDetail(cardId: Long): Flow<CardnewsDetail>
 
-    suspend fun getCardnewsByCategory(category: Category): List<CardnewsDetail>
+    suspend fun getCardnewsByCategory(category: Category): Flow<List<CardnewsDetail>>
 
-    suspend fun getBanner(): Banners
+    suspend fun getBanner(): Flow<List<Banner>>
 
-    suspend fun getClinic(clinicRequest: ClinicRequest, radius: Int): List<Clinic>
+    suspend fun getClinic(clinicRequest: ClinicRequest, radius: Int): Flow<List<Clinic>>
 }
+

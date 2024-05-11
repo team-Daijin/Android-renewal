@@ -20,18 +20,18 @@ fun RowScope.KnowledgenderNavigationBarItem(
     enabled: Boolean = true,
     alwaysShowLabel: Boolean = true,
     icon: @Composable () -> Unit,
-    selectedIcon: @Composable () -> Unit = icon,
     label: @Composable (() -> Unit)? = null,
 ) {
     NavigationBarItem(
         selected = selected,
         onClick = onClick,
-        icon = if (selected) selectedIcon else icon,
+        icon = icon,
         modifier = modifier,
         enabled = enabled,
         label = label,
         alwaysShowLabel = alwaysShowLabel,
         colors = NavigationBarItemDefaults.colors(
+            indicatorColor = Color.Transparent,
             selectedIconColor = LightPurple,
             unselectedIconColor = LightBlack,
             selectedTextColor = LightPurple,
@@ -47,7 +47,7 @@ fun KnowledgenderNavigationBar(
 ) {
     NavigationBar(
         modifier = modifier.border(1.dp, Color(0xFFECECEC)),
-        contentColor = Color.White,
+        containerColor = Color.White,
         tonalElevation = 0.dp,
         content = content,
     )

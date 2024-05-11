@@ -14,7 +14,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import site.algosipeosseong.designsystem.theme.DarkestBlack
-import site.algosipeosseong.designsystem.theme.LighterBlack
+import site.algosipeosseong.designsystem.theme.LightBlack
 import site.algosipeosseong.designsystem.theme.pretendard
 
 @Composable
@@ -39,7 +39,7 @@ fun HomeTitleText(modifier: Modifier = Modifier, text: String,subText: String) {
         )
         Spacer(modifier = Modifier.height(4.dp))
         Text(
-            text = subText, color = LighterBlack, style = TextStyle(
+            text = subText, color = LightBlack, style = TextStyle(
                 fontFamily = pretendard,
                 fontWeight = FontWeight.Normal,
                 fontSize = 14.sp

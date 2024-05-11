@@ -3,7 +3,9 @@ androidxActivity = "1.8.0-alpha06"
 androidGradlePlugin = "8.3.1"
 bottomSheet = "1.2.0-alpha02"
 composeBom = "2024.03.00"
+hiltAndroidGradlePlugin = "2.51.1"
 kotlin = "1.9.22"
+kapt = "1.9.22"
 ksp = "1.9.22-1.0.18"
 core-ktx = "1.12.0"
 coil = "2.4.0"
@@ -13,11 +15,11 @@ espresso-core = "3.5.1"
 appcompat = "1.6.1"
 material = "1.11.0"
 hilt = "2.51.1"
-hiltExt = "1.2.0"
-kotlinxCoroutines = "1.6.4"
+hiltExt = "1.1.0"
+kotlinxCoroutines = "1.7.1"
 androidxLifecycle = "2.7.0"
-androidxHiltNavigationCompose = "1.0.0"
-androidxNavigation = "2.7.4"
+androidxHiltNavigationCompose = "1.2.0"
+androidxNavigation = "2.7.7"
 androidxDataStore = "1.0.0"
 androidxComposeCompiler = "1.5.10"
 desugar = "2.0.4"
@@ -33,17 +35,20 @@ viewPager = "1.0.0"
 viewPagerIndicator = "5.0"
 accompanist-pager = "0.20.1"
 
-#implementation "com.google.accompanist:accompanist-pager:0.20.1"
 
 [libraries]
 androidx-compose-bom-v20230300 = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePlugin" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-dataStore-core = { group = "androidx.datastore", name = "datastore", version.ref = "androidxDataStore" }
+
+#inject
+javax-inject = { module = "javax.inject:javax.inject", version = "1" }
 
 #viewPager
 viewPager = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "viewPager" }
@@ -52,12 +57,13 @@ accompanist-pager = { group = "com.google.accompanist", name = "accompanist-page
 
 #google
 google-oauth = {group = "com.google.android.gms",name = "play-services-auth",version.ref = "gmsAuth"}
-#implementation 'com.google.android.gms:play-services-auth:20.7.0'
 
 #rest
+#implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 retrofit-kotlin-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofitKotlinxSerializationJson" }
 
 #room
@@ -70,6 +76,7 @@ androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = 
 andoird-desugar = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugar" }
 
 #kotlinx
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutines" }
 
@@ -104,6 +111,7 @@ androidx-navigation-compose = { group = "androidx.navigation", name = "navigatio
 androidx-navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "androidxNavigation" }
 
 #hilt
+hilt-core = { group = "com.google.dagger", name = "hilt-core", version.ref = "hilt" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }

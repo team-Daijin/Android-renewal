@@ -26,6 +26,8 @@ dependencies {
     implementation(project(":core:model"))
     implementation(project(":core:network"))
 
+
+
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)

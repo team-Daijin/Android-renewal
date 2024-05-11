@@ -1,11 +1,13 @@
 plugins {
     alias(libs.plugins.knowledgender.android.feature)
     alias(libs.plugins.knowledgender.compose.library)
+    alias(libs.plugins.knowledgender.android.hilt)
 }
 
 android {
     namespace = "site.algosipeosseong.home"
     defaultConfig {
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
 

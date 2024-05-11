@@ -1,18 +1,18 @@
-
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
-
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    id("java-library")
+    alias(libs.plugins.knowledgender.android.library)
+    alias(libs.plugins.knowledgender.android.hilt)
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+
+
+android {
+    namespace = "site.algosipeosseong.domain"
 }
-tasks.withType<KotlinCompile>().configureEach {
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
-    }
+
+dependencies {
+    implementation(project(":core:model"))
+    implementation(project(":core:data"))
+
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.hilt.core)
 }

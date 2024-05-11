@@ -22,12 +22,12 @@ import site.algosipeosseong.designsystem.theme.pretendard
 import site.algosipeosseong.model.Category
 
 @Composable
-fun CategoryIcon(painter: Int,text: String,onNavigateTo: () -> Unit) {
+fun CategoryIcon(painter: Int,text: String,onNavigateTo: (String) -> Unit, string: String) {
     Column(modifier = Modifier.height(45.dp),horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.SpaceBetween) {
         Image(
             modifier = Modifier
                 .size(30.dp)
-                .clickable { onNavigateTo.invoke() },
+                .clickable { onNavigateTo(string) },
             painter = painterResource(id = painter),
             contentDescription = ""
         )
